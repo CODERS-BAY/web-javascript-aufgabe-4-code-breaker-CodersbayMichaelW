@@ -1,0 +1,202 @@
+:root {
+    --black: rgb(0, 0, 0);
+    --white: rgb(255, 255, 255);
+    --grey: rgb(230, 230, 230);
+    --metalic: rgb(204, 204, 204);
+    --darkblue: rgb(35, 10, 89);
+    --blue: rgb(62, 56, 242);
+    --middleblue: rgb(0, 41, 250);
+    --brightblue: rgb(92, 115, 242);
+    --mattblue: rgb(130, 159, 217);
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Merriweather', Arial;
+    color: var(--black);
+}
+
+
+/* header */
+header h1 {
+    text-align: center;
+    font-size: 4rem;
+    margin: 3rem 0;
+    color: var(--mattblue);
+    text-shadow: 
+        0 -1px 0 rgb(255, 255, 255),
+        0 1px 0 rgb(46, 46, 46),
+        0 2px 0 rgb(44, 44, 44),
+        0 3px 0 rgb(42, 42, 42),
+        0 4px 0 rgb(40, 40, 40),
+        0 5px 0 rgb(38, 38, 38),
+        0 6px 0 rgb(36, 36, 36),
+        0 7px 0 rgb(34, 34, 34),
+        0 8px 0 rgb(32, 32, 32);
+}
+
+/* main */
+
+/* game */
+
+/* number-selection */
+.numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+.numbers div {
+    display: flex;
+    flex-direction: column;
+    width: 3rem;
+    justify-content: center;
+}
+.numbers div:not(:nth-child(1)) {
+    margin-left: 5%;
+}
+.numbers input {
+    text-align: center;
+    height: 5rem;
+    font-size: 4rem;
+    background-color: var(--grey);
+    border: none;
+    border-left: 1px solid var(--black);
+    border-right: 1px solid var(--black);
+    z-index: 2;
+}
+.numbers div button:nth-child(1) {
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: var(--brightblue);
+    background-image: url("../img/arrow.png");
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.numbers div button:nth-child(3) {
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: var(--brightblue);
+    background-image: url("../img/darrow.png");
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.numbers button {
+    height: 1.5rem;
+    z-index: 1;
+}
+.numbers button:active:nth-child(1) {
+    transform: skewX(-50deg) translateX(8px);
+    height: 1rem;
+    box-shadow: 2px 0 1px var(--black);
+}
+.numbers button:active:nth-child(3) {
+    transform: skewX(50deg) translateX(8px);
+    height: 1rem;
+    box-shadow: 2px 0 1px var(--black);
+}
+
+/* game-buttons | Start, Reset*/
+.game-buttons {
+    text-align: center;
+}
+.game-buttons button:not(:first-child) {
+    margin-left: 15%;
+}
+.game-buttons button {
+    width: 7rem;
+    height: 3rem;
+    border-radius: 10px;
+}
+#reset, #guess {
+    color: var(--white);
+    font-weight: bolder;
+    font-size: 1.5rem;
+    border: none;
+    text-shadow: 0px -2px 0px rgba(0,0,0,1), 0 0 0.5px rgba(255,255,255,0.8),0 -4px 15px rgba(255,255,255,0.5);
+    box-shadow: 5px 5px 2px rgb(204, 204, 204);
+}
+#guess {
+    background-color: var(--blue);
+}
+#reset {
+    background-color: var(--darkblue);
+}
+#reset:active, #guess:active {
+    transform: scale(0.95);
+}
+
+/* result */
+.result {
+    display: flex;
+    margin-top: 3rem;
+    background-color: var(--mattblue);
+    transform: skewY(-2deg);
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    color: var(--white);
+    text-shadow: 
+        0 -1px 0 rgb(255, 255, 255),
+        0 1px 0 rgb(46, 46, 46),
+        0 2px 0 rgb(44, 44, 44),
+        0 3px 0 rgb(42, 42, 42),
+        0 4px 0 rgb(40, 40, 40),
+        0 5px 0 rgb(38, 38, 38),
+        0 6px 0 rgb(36, 36, 36),
+        0 7px 0 rgb(34, 34, 34),
+        0 8px 0 rgb(32, 32, 32);
+}
+.result h2 {
+    font-size: 3rem;
+}
+
+
+/* wide-screen */
+@media (min-width: 700px) {
+    /* header */
+    header h1 {
+        font-size: 6rem;
+    }
+
+    /* main */
+    .game {
+        display: flex;
+        justify-content: center;
+    }
+    
+    /* numbers */
+    .numbers div:not(:first-child) {
+        margin-left: 20%;
+    }
+
+    /* game-buttons | Start, Reset*/
+    .game-buttons {
+        display: flex;
+        flex-direction: column;
+        margin-left: 5rem;
+    }
+    .game-buttons button:not(:first-child) {
+        margin-left: 0%;
+    }
+    .game-buttons button:last-child {
+        margin-top: 2rem;
+    }
+
+    /* result */
+    .result {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+}
