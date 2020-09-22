@@ -1,11 +1,9 @@
 class Count {
-    constructor() {
-        this.number = 0;
-
-        var tag = document.createElement("div");
-        var button1 = document.createElement("button");
-        var button2 = document.createElement("button");
-        var text = document.createElement("input");
+    constructor(index) {
+        let tag = document.createElement("div");
+        let button1 = document.createElement("button");
+        let button2 = document.createElement("button");
+        let text = document.createElement("input");
     
         tag.appendChild(button1);
         tag.appendChild(text);
@@ -13,44 +11,13 @@ class Count {
         numbers.appendChild(tag);
     
         // give the tags an class!
-        // let textString = '<button id=increase' + i + '></button>';
-        let textString = '<button class="increase"></button>';
+        let textString = '<button type="button" onclick="increaseByOne(' + index + ')"></button>';
         button1.outerHTML = textString;
 
-        textString = '<input value=' + this.number + '>';
+        textString = '<input id="findObject' + index + '" value="0">';
         text.outerHTML = textString;
 
-        // textString = '<button id=increase' + i + '></button>';
-        textString = '<button class="decrease"></button>';
+        textString = '<button type="button" onclick="decreaseByOne(' + index + ')"></button>';
         button2.outerHTML = textString;
-    }
-
-    get countNumber() {
-        return this.number;
-    }
-
-    increaseNumber() {
-        if (this.number == 9) {
-            this.number = 0;
-        }
-        else {
-            this.number++;
-        }
-        this.updateValue();
-    }
-
-    decreaseNumber() {
-        if (this.number == 0) {
-            this.number = 9;
-        }
-        else {
-            this.number--;
-        }
-        updateValue();
-    }
-
-    updateValue() {
-        // debug
-        console.log(this.number);
     }
 }

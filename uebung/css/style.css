@@ -96,7 +96,9 @@ header h1 {
     height: 1.5rem;
     z-index: 1;
 }
-.numbers button:active:nth-child(1) {
+
+/* Causes Problems for the function for increasing and decreasing of the number :( */
+/* .numbers button:active:nth-child(1) {
     transform: skewX(-50deg) translateX(8px);
     height: 1rem;
     box-shadow: 2px 0 1px var(--black);
@@ -105,7 +107,7 @@ header h1 {
     transform: skewX(50deg) translateX(8px);
     height: 1rem;
     box-shadow: 2px 0 1px var(--black);
-}
+} */
 
 /* game-buttons | Start, Reset*/
 .game-buttons {
@@ -137,15 +139,47 @@ header h1 {
     transform: scale(0.95);
 }
 
-/* result */
-.result {
+/* confirmentation of reset */
+.confirmentationOfReset {
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.3rem;
+    color: var(--white);
     margin-top: 3rem;
+    background-color: var(--darkblue);
+    transform: skewY(-2deg);
+}
+.confirmentationOfReset button {
+    font-weight: bolder;
+    width: 4rem;
+    height: 1.8rem;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px -2px 0px rgba(0,0,0,1),0 -4px 15px rgba(255,255,255,0.5);
+}
+.confirmentationOfReset button:not(:first-child) {
+    margin-left: 20px;
+}
+.confirmentationOfReset button:first-of-type {
+    background-color: rgb(173, 255, 47);
+}
+.confirmentationOfReset button:last-of-type {
+    background-color: rgb(255, 0, 0);
+}
+.confirmentationOfReset button:active {
+    transform: scale(0.9);
+}
+
+/* result */
+.result h2 {
+    display: flex;
     background-color: var(--mattblue);
     transform: skewY(-2deg);
     justify-content: center;
     align-items: center;
     height: 5rem;
+    font-size: 3rem;
     color: var(--white);
     text-shadow: 
         0 -1px 0 rgb(255, 255, 255),
@@ -158,9 +192,19 @@ header h1 {
         0 7px 0 rgb(34, 34, 34),
         0 8px 0 rgb(32, 32, 32);
 }
-.result h2 {
-    font-size: 3rem;
+.result p {
+    text-align: center;
 }
+.result p:first-of-type {
+    margin-top: 2rem;
+}
+.result p:last-of-type {
+    margin-bottom: 5rem;
+}
+.result p:not(:first-of-type) {
+    margin-top: 0.5rem;
+}
+
 
 
 /* wide-screen */
@@ -192,6 +236,27 @@ header h1 {
     }
     .game-buttons button:last-child {
         margin-top: 2rem;
+    }
+
+    /* confirmentation of reset */
+    .confirmentationOfReset {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+        color: var(--white);
+        margin-top: 3rem;
+        background-color: var(--darkblue);
+        transform: skewY(-2deg);
+    }
+    .confirmentationOfReset button:first-child {
+        margin-left: 60px;
+    }
+    .confirmentationOfReset button:first-of-type:hover {
+        background-color: rgb(215, 255, 155);
+    }
+    .confirmentationOfReset button:last-of-type:hover {
+        background-color: rgb(255, 131, 131);
     }
 
     /* result */
