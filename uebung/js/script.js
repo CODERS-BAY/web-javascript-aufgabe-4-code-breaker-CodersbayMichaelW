@@ -63,6 +63,14 @@ function setupVariablesOnLoad() {
 }
 function updateVariablesOnResize() {
     widthOfScreen = document.getElementsByClassName("options")[0].clientWidth;
+
+    // incase there are more numbers than it is allowed when switching to moblie
+    if (widthOfScreen < 700 && numbersOverall > 3) {
+        while (numbersOverall > 3) {
+            numberGoDown();
+        }
+        resetGame();
+    }
 }
 
 // ------------------------------------------------------------------------
