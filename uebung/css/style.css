@@ -277,8 +277,8 @@ header h1 {
     bottom: 87px;
     left: 30%;
     margin-left: -9.8px;
-    -webkit-transform: translateX(48px);
-    transform: translateX(48px);
+    -webkit-transform: translateX(55px);
+    transform: translateX(55px);
     height: 0;
 }
 .numbers div {
@@ -427,8 +427,8 @@ header h1 {
         bottom: 103px;
         left: 50%;
         margin-left: -9.8px;
-        -webkit-transform: translateX(-24px);
-        transform: translateX(-24px);
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
     }
 
 }
@@ -468,7 +468,7 @@ header h1 {
         bottom: 98px;
         left: 50%;
         margin-left: -9.8px;
-        -webkit-transform: translateX(-25px);
-        transform: translateX(-25px);
+        -webkit-transform: translateX(-14px);
+        transform: translateX(-14px);
     }
 }

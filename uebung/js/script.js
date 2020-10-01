@@ -119,8 +119,8 @@ function visualUpdateOfNumbers() {
     $("input").prop("disabled", true);
 
     // center visual of numbers
-    // let halfWidthOfContainer = Number(document.getElementById("number").clientWidth) / 2;
-    let offset = (-1 * (9.8 * (numbersOverall))) + "px";
+    // let offset = (-1 * Number(document.getElementById("number").clientWidth)) + "px";
+    let offset = (-1 * (19.6 * (numbersOverall / 1.65))) + "px";
     document.getElementById("numbers").style.marginLeft = offset;
 }
 
